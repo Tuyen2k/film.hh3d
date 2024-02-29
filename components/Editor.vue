@@ -6,14 +6,13 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 export class UploadAdapter {
-    loader
-    constructor(loader: any) {
+    constructor(loader) {
         this.loader = loader;
     }
 
@@ -54,10 +53,7 @@ export default {
             editor: ClassicEditor,
             editorData: '<p>Content of the editor.</p>',
             editorConfig: {
-                // plugins:[
-                //     extraPlugins: [this.MyCustomUploadAdapterPlugin]
-                // ]
-                
+                extraPlugins: [this.MyCustomUploadAdapterPlugin]
             }
         };
     },
