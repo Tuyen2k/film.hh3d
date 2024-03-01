@@ -1,6 +1,7 @@
 <template>
   <div>
     <Editor></Editor>
+    <input type="file" @change="handleUpFile" />
   </div>
 </template>
 
@@ -24,6 +25,11 @@ export default Vue.extend({
     saveEditor() {
 
 
+    },
+    handleUpFile(e : any){
+      const file = e.target.files[0]
+      console.log('file', file);
+      
     }
   }
 })
